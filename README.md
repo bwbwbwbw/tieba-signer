@@ -7,6 +7,13 @@ You can simply deploy it on your server and use `cron` to schedule it automatica
 
 The project is inspired from https://github.com/wolforce/me-shumei-open-oks-baidutiebaauto (It is an Android application and you cannot make it automatic. )
 
+## Quick start
+
+```bash
+npm install
+node signer.js
+```
+
 ## Notice
 
 Before starting the tool, please modify `config.coffee` to make it work. Currently the tool can only log in using an existing COOKIE. The following instructions show you how to get your Tieba cookie.
