@@ -1,0 +1,12 @@
+{
+    "name": "tieba-signer",
+    "version": "0.0.1",
+    "dependencies":
+    {
+        "coffee-script":"*",
+        "request":"*",
+        "jquery":"*",
+        "async":"*",
+        "iconv":"*"
+    }
+}

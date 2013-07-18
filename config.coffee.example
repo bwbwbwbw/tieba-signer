@@ -1,0 +1,6 @@
+Config = global.Config =
+    
+    User:   'user'
+    Pass:   'pass'
+
+    Cookie: 'BAIDUID=xxxxx:FG=1; TIEBA_USERTYPE=xxxx; BDUSS=xxxx; SSUDB=xxxx; TIEBAUID=xxxx'
