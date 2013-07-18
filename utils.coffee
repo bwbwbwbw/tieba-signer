@@ -74,8 +74,8 @@ Utils = global.Utils =
             method: 'GET'
 
         (e, r, body) ->
-
-            if body.indexOf('>>我的i贴吧') > -1
+            
+            if body.indexOf('我的i贴吧') > -1
 
                 # Already logged in?
 
