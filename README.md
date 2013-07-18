@@ -5,15 +5,15 @@ This is a tool that could sign in all of your favorited Baidu post bars. It is w
 
 You can simply deploy it on your server and use `cron` to schedule it automatically, or just add it to your auto-start program list.
 
-The project is inspired from https://github.com/wolforce/me-shumei-open-oks-baidutiebaauto . (It is an Android application and you cannot make it automatic)
+The project is inspired from https://github.com/wolforce/me-shumei-open-oks-baidutiebaauto (It is an Android application and you cannot make it automatic. )
 
 ## Notice
 
-Please modify `config.coffee`. Currently it can only log in using an existed COOKIE.
+Before starting the tool, please modify `config.coffee` to make it work. Currently the tool can only log in using an existing COOKIE. The following instructions show you how to get your Tieba cookie.
 
-1. Login in Tieba your browser (PLEASE CLICK 'remember me')
+1. Login Tieba using Chrome (PLEASE CLICK 'remember me')
 
-2. Open the developer tool (In Chrome: F12)
+2. Open the developer tool (`F12`)
 
 3. [In the dev tool]: switch to 'network' tab
 
@@ -25,8 +25,40 @@ Please modify `config.coffee`. Currently it can only log in using an existed COO
 
 ## TODO
 
+Please feel free to contribute to this project :)
+
 1. Support Username / Password login
 
 2. Fetch more pages in 'my favorite Post bars'
 
 3. Retry when failed
+
+## License
+
+(The BSD License)
+
+Copyright (c) 2010, Breezewish.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, 
+are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this 
+  list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice, this 
+  list of conditions and the following disclaimer in the documentation and/or 
+  other materials provided with the distribution.
+* Neither the name of the DUO Interactive, LLC nor the names of its contributors
+  may be used to endorse or promote products derived from this software without 
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE 
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
