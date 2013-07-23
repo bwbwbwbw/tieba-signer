@@ -220,14 +220,13 @@ Utils = global.Utils =
             (e, r, body) ->
 
                 # 1. 无需签到？
-
-                if body.indexOf('"is_on":false') > -1
+                if body.match('"sign_is_on"[^:]*:[^"]*"0"')
                     console.log '无需签到'
                     next()
                     return
 
                 # 2. 已签到？
-                if body.indexOf('"is_sign_in":1') > -1
+                if body.match('"is_sign"[^:]*:[^"]*"1"')
                     console.log '已签到过'
                     next()
                     return
