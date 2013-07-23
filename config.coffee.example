@@ -4,3 +4,16 @@ Config = global.Config =
     Pass:   'pass'
 
     Cookie: 'BAIDUID=xxxxx:FG=1; TIEBA_USERTYPE=xxxx; BDUSS=xxxx; SSUDB=xxxx; TIEBAUID=xxxx'
+
+    Mail:
+
+        Enabled:    true
+
+        Target:     'me@qq.com'
+
+        Server:     'smtp.exmail.qq.com'
+        Port:       465
+        Secure:     true
+        User:       'my-notifier@qq.com'
+        Pass:       'password'
+        Nick:       'TiebaSigner'

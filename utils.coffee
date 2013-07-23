@@ -51,6 +51,24 @@ getTbs = (body) ->
     body.match(/"tbs"\s*?:\s*?"(\w+)"/)[1]
 
 
+if (Config.Mail.Enabled)
+
+    nodemailer = require 'nodemailer'
+
+    transport = nodemailer.createTransport 'SMTP',
+        secureConnection:   Config.Mail.Secure
+        host:               Config.Mail.Server
+        port:               Config.Mail.Port
+        auth:
+            user:           Config.Mail.User
+            pass:           Config.Mail.Pass
+
+failedSign = []
+
+
+
+
+
 Utils = global.Utils =
     
     # Parse and add cookie from REQUEST cookie header
@@ -74,7 +92,7 @@ Utils = global.Utils =
             method: 'GET'
 
         (e, r, body) ->
-            
+
             if body.indexOf('我的i贴吧') > -1
 
                 # Already logged in?
@@ -159,6 +177,8 @@ Utils = global.Utils =
 
         console.log '[Initializing] Query favorites'
 
+
+
         _request(
 
             uri:    'http://tieba.baidu.com/f/like/mylike?pn='
@@ -201,7 +221,22 @@ Utils = global.Utils =
 
                 setTimeout( ->
                     sign()
-                , Math.random() * 3000 + 1000)
+                , Math.random() * 3000 + 3000)
+
+            else
+
+                if (Config.Mail.Enabled && failedSign.length > 0)
+
+                    transport.sendMail(
+                        {
+                            from:       Config.Mail.Nick + ' <' + Config.Mail.User + '>'
+                            to:         Config.Mail.Target
+                            subject:    '[Tieba Signer] ' + failedSign.length.toString() + ' fails.'
+                            text:       JSON.stringify(failedSign, null, 4)
+                        },
+                        ->
+                            transport.close()
+                    )
 
         sign = ->
 
@@ -257,6 +292,7 @@ Utils = global.Utils =
                     else
 
                         console.log '签到失败: ' + error_map[obj.no]
+                        failedSign.push {name: current, reason: error_map[obj.no]}
 
                     next()
 
