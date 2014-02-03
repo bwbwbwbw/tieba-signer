@@ -4,8 +4,8 @@
     "dependencies":
     {
         "coffee-script":"*",
-        "request":"*",
-        "jquery":"*",
+        "request":"~2.27.0",
+        "cheerio":"*",
         "async":"*",
         "iconv":"*",
         "nodemailer":"*"
