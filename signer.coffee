@@ -3,23 +3,21 @@ GLOBAL.UA = 'Mozilla/5.0 (Linux; U; Android 2.3.5; zh-cn; MI-ONE Plus Build/GING
 request = require 'request'
 GLOBAL.jar = request.jar()
 
-GLOBAL.request = request.defaults jar:jar
+GLOBAL.request = request.defaults jar: jar
 
 require './config.coffee'
 require './utils.coffee'
 
 async = require 'async'
 
-if Config.Cookie?
-    Utils.AddCookie Config.Cookie
+Utils.AddCookie Config.Cookie if Config.Cookie?
 
 ######################################
 
 async.waterfall [
-    Utils.RequestHomepage,
-    Utils.QueryFavorite,
+    Utils.RequestHomepage
+    Utils.QueryFavorite
     Utils.SignList
 ], (err) ->
-
     console.log '[Done]'
     console.log '[Error] %s', err.message if err

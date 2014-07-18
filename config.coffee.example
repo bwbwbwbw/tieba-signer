@@ -5,9 +5,7 @@ Config = global.Config =
     Mail:
 
         Enabled:    true
-
         Target:     'me@qq.com'
-
         Server:     'smtp.exmail.qq.com'
         Port:       465
         Secure:     true
