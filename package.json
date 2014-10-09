@@ -8,6 +8,6 @@
         "cheerio":"*",
         "async":"*",
         "iconv":"*",
-        "nodemailer":"*"
+        "nodemailer":"0.7.0"
     }
 }
